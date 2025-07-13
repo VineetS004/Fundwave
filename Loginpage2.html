@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Volunteer Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7fafc;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .availability label {
+      display: inline-block;
+      margin-right: 15px;
+      font-weight: normal;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .success-message {
+      text-align: center;
+      color: green;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Volunteer Application Form</h2>
+    <p id="welcomeText"></p>
+
+    <form id="volunteerForm">
+      <label for="skills">Skills & Experience</label>
+      <textarea id="skills" placeholder="Tell us about your background..."></textarea>
+
+      <label>Availability *</label>
+      <div class="availability">
+        <label><input type="checkbox" name="availability" value="Weekdays"> Weekdays</label>
+        <label><input type="checkbox" name="availability" value="Weekends"> Weekends</label>
+        <label><input type="checkbox" name="availability" value="Evenings"> Evenings</label>
+      </div>
+
+      <label for="interest">Why are you interested in volunteering?</label>
+      <textarea id="interest" placeholder="Your motivation..."></textarea>
+
+      <button type="submit">Submit Application</button>
+      <div class="success-message" id="successMessage"></div>
+    </form>
+  </div>
+
+  <script>
+    // Check if visitor info is available
+    const visitorName = localStorage.getItem("visitorName");
+    const visitorEmail = localStorage.getItem("visitorEmail");
+
+    if (!visitorName || !visitorEmail) {
+      alert("Please sign in first.");
+      window.location.href = "visitor.html";
+    } else {
+      document.getElementById("welcomeText").textContent = `Welcome, ${visitorName} (${visitorEmail})`;
+    }
+
+    document.getElementById("volunteerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const availability = document.querySelectorAll('input[name="availability"]:checked');
+
+      if (availability.length === 0) {
+        alert("Please select at least one availability option.");
+        return;
+      }
+
+      document.getElementById("successMessage").textContent =
+        "Thank you for applying! We'll be in touch soon.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>

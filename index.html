@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./image/piggy-bank.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FundWave</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div
+                style="background-color: rgb(255, 230, 150); height: 57px; width: 175px; border-radius: 10px; padding:5px 0px 0px 4px; ">
+                <div style="border-radius: 10px; width: 80px;" class="logo">
+                    <h1>FundWave</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <button style="border-radius: 20px; background-color: darkgray; margin-right: 10px; height: 30px;">
+                        <li><a class="ab" href="Index.html">Home</a></li>
+                    </button>
+                    <button style="border-radius: 20px; background-color: darkgray;margin-right: 10px;">
+                        <li><a class="pr" href="#projects">Projects</a></li>
+                    </button>
+                    <button style="border-radius: 20px; background-color: darkgray;margin-right: 10px;">
+                        <li><a class="do" href="Donation.html">Donate</a></li>
+                    </button>
+                    <button style="border-radius: 20px; background-color: darkgray;margin-right: 10px;">
+                        <li><a class="co" href="About.html">Contact</a></li>
+                    </button>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <h2>Help Change Lives Today!</h2>
+        <p>Join our mission to help lift the poor and make a real difference in their lives.</p>
+        <a href="Donation.html" class="btn">Donate Now</a>
+    </section>
+
+    <section id="projects">
+        <h2>Current Projects</h2>
+        <div class="project-list">
+            <div class="project">
+                <video style="height: 200px; width: 300px;" autoplay loop muted plays-inline class="back-video">
+                    <source src="image/CFVdo2.mp4" type="video/mp4">
+                </video>
+                <h3>Help for Homeless Families</h3>
+                <p>We are raising funds to provide shelter and food for homeless families.</p>
+                <button class="donate-button" onclick="donate(100)">Donate ₹1000</button>
+            </div>
+            <div class="project">
+                <video style="height: 200px; width: 300px;" autoplay loop muted plays-inline class="back-video">
+                    <source src="image/CFVdo.mp4" type="video/mp4">
+                </video>
+                <h3>Medical Aid for the Poor</h3>
+                <p>Donations will go towards providing medical care for those who can't afford it.</p>
+                <button class="donate-button" onclick="donate(50)">Donate ₹500</button>
+            </div>
+            <div class="project">
+                <video style="height: 200px; width: 300px;" autoplay loop muted plays-inline class="back-video">
+                    <source src="image/CF3.mp4" type="video/mp4">
+                </video>
+                <h3>Education for Underprivileged Kids</h3>
+                <p>Help us send kids from poor communities to school and provide educational supplies.</p>
+                <button class="donate-button" onclick="donate(30)">Donate ₹300</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="donate">
+        <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Why Fundraise with Fundwave?</h2>
+        <div class="fw-container">
+            <div class="fw-card" style="background-color: transparent;">
+                <div class="fw-card-2">
+                    <i class="fa-solid fa-0 fa-beat fa-2xl" style="color: #5a5a5a; margin-top: 70px; font-size: 80px; "></i>
+                    <h2 style="color: #5a5a5a; margin-top: 30px;">0 %</h2>
+                    <h3 style="color: #5a5a5a; font-weight: 100;">Platform Fee</h3>
+                </div>
+                <div class="fw-card-2" style="margin-top: 20px;">
+                    <i class="fa-solid fa-hospital-user fa-beat fa-2xl" style="color: #4f4f4f; margin-top: 60px; font-size: 80px;"></i>
+                    <h2 style="margin-top: 40px; color: #5a5a5a;">25+ Lakh</h2>  
+                    <h3 style="color: #5a5a5a; font-weight: 100;">Medical aid funded</h3>
+                </div>
+            </div>
+            <div class="fw-card" style="box-shadow:5px 10px 15px rgb(170, 170, 170);">
+                <i class="fa-solid fa-wallet fa-beat fa-2xl" style="color: #5a5a5a; font-size: 100px;
+                margin-top: 80px;"></i>
+                <h2 style="margin-top: 80px; color: #5a5a5a;">All Payments</h2>
+                <h2 style="color: #5a5a5a;">Accepted</h2>
+                <h3 style="font-weight: 100; margin-top: 40px; color: #5a5a5a;">Google Pay, Paytm, UPI, Net Banking & Wallets Accepted</h3>
+            </div>
+            <div class="fw-card" style="background-color: transparent;">
+                <div class="fw-card-3">
+                    <i class="fa-solid fa-people-group fa-beat fa-2xl" style="color: #5a5a5a; font-size: 80px; margin-top: 70px;"></i>
+                    <h2 style="margin-top: 30px; color: #5a5a5a;">30+ Lakh</h2>
+                    <h3 style="color: #5a5a5a; font-weight: 100;">Donor Community</h3>
+                </div>
+                <div class="fw-card-3" style="margin-top: 20px;">
+                    <i class="fa-solid fa-truck-fast fa-beat fa-2xl" style="color: #4f4f4f; font-size: 70px; margin-top: 60px;"></i>
+                    <h2 style="margin-top: 40px; color: #5a5a5a;">Fast</h2>
+                    <h3 style="color: #5a5a5a; font-weight: 100;">Review of your fundraiser</h3>
+                </div>
+            </div>
+        </div>
+          
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 FundWave | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

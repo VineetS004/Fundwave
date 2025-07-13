@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./image/piggy-bank.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FundWave</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div
+                style="background-color: rgb(255, 230, 150); height: 57px; width: 175px; border-radius: 10px; padding:5px 0px 0px 4px; ">
+                <div style="border-radius: 10px; width: 80px;" class="logo">
+                    <h1>FundWave</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <button style="border-radius: 20px; background-color: darkgray; margin-right: 10px; height: 30px;">
+                        <li><a class="ab" href="Index.html">Home</a></li>
+                    </button>
+                    <button style="border-radius: 20px; background-color: darkgray;margin-right: 10px;">
+                        <li><a class="pr" href="Index.html">Projects</a></li>
+                    </button>
+                    <button style="border-radius: 20px; background-color: darkgray;margin-right: 10px;">
+                        <li><a class="do" href="Donation.html">Donate</a></li>
+                    </button>
+                    <button style="border-radius: 20px; background-color: darkgray;margin-right: 10px;">
+                        <li><a class="co" href="About.html">Contact</a></li>
+                    </button>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<div class="donation">
+    <section id="donate">
+        <h2>Make a Donation</h2>
+        <form id="donate-form">
+            <label for="donation-amount">Donation Amount (₹):</label>
+            <input type="number" id="donation-amount" name="donation-amount" required min="1">
+            <button type="submit" class="btn">Donate Now</button>
+        </form>
+        <p id="donation-message"></p>
+    </section>
+</div>
+<div style="height: 100px; width: auto;"></div>
+   
+
+    <footer >
+        <p>&copy; 2024 FundWave | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

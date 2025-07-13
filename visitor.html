@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Start a Free Fundraiser</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #e76f51;
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      background-color: #f4a261;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 30%;
+      margin-left: 35%;
+    }
+
+    .btn:hover {
+      background-color: #e76f51;
+    }
+
+    .success-message {
+      text-align: center;
+      margin-top: 1rem;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Start a Free Fundraiser</h2>
+    <form id="donorForm">
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="number" id="amount" name="amount" min="1" placeholder="e.g. 1234567890" required />
+
+      <!-- <label for="amount">Donation Amount ($)</label>
+      <input type="number" id="amount" name="amount" min="1" required />
+
+      <label>Donation Type</label>
+      <div class="radio-group">
+        <label><input type="radio" name="type" value="One-time" checked /> One-time</label>
+        <label><input type="radio" name="type" value="Monthly" /> Monthly</label> -->
+      <!-- </div> -->
+
+      <a href="Index.html"><button type="submit" class="btn">Start Fundraising</button></a>
+      <p id="successMessage" class="success-message" style="display: none;">Thank you for your support!</p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('donorForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Basic validation
+      const name = form.fullName.value.trim();
+      const email = form.email.value.trim();
+      const phone = form.phone.value.trim();
+      const amount = parseFloat(form.amount.value);
+
+      if (!name || !email || !phone || isNaN(amount) || amount < 1) {
+        alert('Please fill out all fields correctly.');
+        return;
+      }
+
+      // Simulate successful submission
+      successMessage.style.display = 'block';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
+
+

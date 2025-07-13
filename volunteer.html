@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="./image/piggy-bank.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FundWave</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    .availability {
+      margin-top: 10px;
+    }
+
+    .availability label {
+      font-weight: normal;
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Volunteer Application Form</h2>
+    <form id="volunteerForm">
+      <!-- Personal Info -->
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" name="phone">
+
+      <!-- Skills -->
+      <label for="skills">Relevant Skills & Experience</label>
+      <textarea id="skills" name="skills" placeholder="Tell us about your background..."></textarea>
+
+      <!-- Availability -->
+      <label>Availability *</label>
+      <div class="availability">
+        <label><input type="checkbox" name="availability" value="Weekdays"> Weekdays</label>
+        <label><input type="checkbox" name="availability" value="Weekends"> Weekends</label>
+        <label><input type="checkbox" name="availability" value="Evenings"> Evenings</label>
+      </div>
+
+      <!-- Motivation -->
+      <label for="interest">Why are you interested in volunteering?</label>
+      <textarea id="interest" name="interest" placeholder="Your motivation..."></textarea>
+
+      <button type="submit" class="btn">Submit Application</button>
+      <div id="successMessage" class="success-message"></div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('volunteerForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const availability = document.querySelectorAll('input[name="availability"]:checked');
+
+      if (!name || !email || availability.length === 0) {
+        alert("Please fill out required fields and select at least one availability option.");
+        return;
+      }
+
+      document.getElementById('successMessage').textContent = "Thank you! Your application has been submitted.";
+      this.reset(); // Optional: Clear form after submission
+    });
+  </script>
+
+</body>
+</html>
